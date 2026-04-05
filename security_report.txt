@@ -1,0 +1,85 @@
+SECURE CODING REVIEW REPORT — CodeAlpha Internship
+=================================================================
+Date         : 2026-04-05 19:58:47
+Issues found : 10
+
+Issue #1  [HIGH]  SEC-01
+  Title : Hardcoded password / secret detected
+  File  : sample_vulnerable_app.py  (line 16)
+  Code  : db_password = "supersecret123"
+  Fix   : Never hardcode credentials in source code.
+         Store secrets in environment variables or a secrets manager:
+           import os
+           password = os.environ['DB_PASSWORD']
+
+Issue #2  [HIGH]  SEC-01
+  Title : Hardcoded password / secret detected
+  File  : sample_vulnerable_app.py  (line 17)
+  Code  : api_key     = "sk-live-abcdef1234567890"
+  Fix   : Never hardcode credentials in source code.
+         Store secrets in environment variables or a secrets manager:
+           import os
+           password = os.environ['DB_PASSWORD']
+
+Issue #3  [HIGH]  SQL-01
+  Title : Potential SQL Injection (string formatting in query)
+  File  : sample_vulnerable_app.py  (line 23)
+  Code  : cursor.execute("SELECT * FROM users WHERE id = '%s'" % user_id)
+  Fix   : Never build SQL queries with string formatting or concatenation.
+         Use parameterised queries:
+           cursor.execute('SELECT * FROM users WHERE id = ?', (user_id,))
+
+Issue #4  [HIGH]  INJ-02
+  Title : Shell injection risk (os.system / subprocess with shell=True)
+  File  : sample_vulnerable_app.py  (line 28)
+  Code  : subprocess.run("tar -czf backup.tar.gz " + folder, shell=True)
+  Fix   : Avoid shell=True with user-controlled data.
+         Pass a list of arguments instead:
+           subprocess.run(['ls', '-la'], shell=False)
+
+Issue #5  [MEDIUM]  CRY-01
+  Title : Insecure random number generator (random module)
+  File  : sample_vulnerable_app.py  (line 32)
+  Code  : return str(random.randint(100000, 999999))
+  Fix   : The 'random' module is NOT cryptographically secure.
+         For tokens, passwords, or security-sensitive values use:
+           import secrets
+           token = secrets.token_hex(32)
+
+Issue #6  [HIGH]  CRY-02
+  Title : Weak hashing algorithm (MD5 / SHA1)
+  File  : sample_vulnerable_app.py  (line 36)
+  Code  : return hashlib.md5(pwd.encode()).hexdigest()
+  Fix   : MD5 and SHA-1 are cryptographically broken.
+         For passwords use bcrypt / argon2.
+         For integrity checks use SHA-256 or SHA-3:
+           hashlib.sha256(data).hexdigest()
+
+Issue #7  [HIGH]  DSR-01
+  Title : Unsafe deserialization (pickle.loads)
+  File  : sample_vulnerable_app.py  (line 40)
+  Code  : return pickle.loads(data)
+  Fix   : pickle.load() can execute arbitrary code during deserialization.
+         Never unpickle data from untrusted sources.
+         Prefer JSON or a schema-validated format.
+
+Issue #8  [HIGH]  INJ-01
+  Title : Use of eval() or exec() with dynamic input
+  File  : sample_vulnerable_app.py  (line 44)
+  Code  : return eval(user_input)
+  Fix   : eval() and exec() execute arbitrary code — never pass user
+         input to them.  Use ast.literal_eval() for safe data parsing.
+
+Issue #9  [MEDIUM]  CFG-01
+  Title : Debug mode enabled (Flask / Django)
+  File  : sample_vulnerable_app.py  (line 47)
+  Code  : DEBUG = True
+  Fix   : Debug mode exposes stack traces and internal details.
+         Set DEBUG = False (or use an environment variable) in production.
+
+Issue #10  [LOW]  ERR-01
+  Title : Broad exception suppressed (bare except / except Exception)
+  File  : sample_vulnerable_app.py  (line 53)
+  Code  : except Exception:      # BAD: bare exception
+  Fix   : Catching all exceptions hides bugs and security errors.
+         Catch specific exception types and log them properly.
