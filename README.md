@@ -2,7 +2,6 @@
 
 **Intern Name:** Muhammad Ahmad  
 **ID:** CA/DF1/43736
-
 **Internship:** CodeAlpha Cybersecurity  
 **Tasks Completed:** Task 1, Task 2, Task 3
 
