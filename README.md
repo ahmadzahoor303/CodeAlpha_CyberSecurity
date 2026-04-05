@@ -154,5 +154,5 @@ CodeAlpha_Tasks/
 ```
 
 ## 🔗 Connect
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
+- LinkedIn:https://www.linkedin.com/in/muhammad-ahmad-7b3014362
+- GitHub: https://github.com/ahmadzahoor303
