@@ -7,7 +7,7 @@
 
 ---
 
-## ✅ Task 1 — Basic Network Sniffer
+## Task 1 — Basic Network Sniffer
 
 ### Description
 A Python program that captures live network traffic packets and displays useful information such as source/destination IPs, protocols, ports, and payloads.
@@ -51,7 +51,7 @@ sudo python3 task1_network_sniffer.py
 <img width="947" height="202" alt="image" src="https://github.com/user-attachments/assets/d21bb34d-5fa9-4733-93c2-94e40fc5301a" />
 
 
-## ✅ Task 2 — Phishing Awareness Training
+## Task 2 — Phishing Awareness Training
 
 ### Description
 An interactive web-based training module that educates users about phishing attacks, social engineering tactics, and how to stay safe online.
@@ -79,7 +79,7 @@ Opens in your browser instantly — no setup needed!
 
 ---
 
-## ✅ Task 3 — Secure Coding Review
+## Task 3 — Secure Coding Review
 
 ### Description
 A Python-based static code analysis tool that scans Python source files for common security vulnerabilities and provides detailed remediation recommendations.
@@ -136,12 +136,12 @@ Fix   : Use environment variables instead
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - Python 3.x
 - Scapy
 - HTML / CSS / JavaScript (Task 2)
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 CodeAlpha_Tasks/
 ├── task1_network_sniffer.py       # Network Sniffer
@@ -150,6 +150,7 @@ CodeAlpha_Tasks/
 ├── sample_vulnerable_app.py       # Demo file for Task 3
 ├── security_report.txt            # Sample scan report
 └── README.md                      # This file
+└── captured_packets.log
 ```
 
 ## 🔗 Connect
