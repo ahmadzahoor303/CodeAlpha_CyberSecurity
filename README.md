@@ -47,6 +47,8 @@ sudo python3 task1_network_sniffer.py
 ```
 
 ---
+<img width="947" height="202" alt="image" src="https://github.com/user-attachments/assets/d21bb34d-5fa9-4733-93c2-94e40fc5301a" />
+
 
 ## ✅ Task 2 — Phishing Awareness Training
 
@@ -124,6 +126,7 @@ File  : sample_vulnerable_app.py (line 16)
 Code  : db_password = "supersecret123"
 Fix   : Use environment variables instead
 ```
+<img width="1102" height="845" alt="image" src="https://github.com/user-attachments/assets/eef7c2bc-b698-45b9-890f-8c767bb291f1" />
 
 ### Libraries Used
 - `re` — regex pattern matching
