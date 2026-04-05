@@ -1,6 +1,6 @@
 # CodeAlpha Cybersecurity Internship — Tasks
 
-**Intern Name:** Ahmad  
+**Intern Name:** Muhammad Ahmad  
 **Internship:** CodeAlpha Cybersecurity  
 **Tasks Completed:** Task 1, Task 2, Task 3
 
