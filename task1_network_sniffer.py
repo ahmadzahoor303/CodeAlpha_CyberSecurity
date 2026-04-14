@@ -1,22 +1,3 @@
-"""
-╔══════════════════════════════════════════════════════════╗
-║         TASK 1: Basic Network Sniffer                   ║
-║         CodeAlpha Cybersecurity Internship              ║
-╚══════════════════════════════════════════════════════════╝
-
-What this program does:
-  - Captures live network packets from your machine
-  - Shows Source IP, Destination IP, Protocol, and Payload
-  - Logs everything to a file for later analysis
-
-Libraries used:
-  - scapy  : powerful packet capture & analysis library
-  - datetime: to timestamp each captured packet
-
-How to run:
-  1. Install scapy:  pip install scapy
-  2. Run as admin:   sudo python3 task1_network_sniffer.py
-"""
 
 # ── Imports ──────────────────────────────────────────────
 from scapy.all import sniff, IP, TCP, UDP, ICMP, Raw
