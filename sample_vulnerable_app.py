@@ -1,10 +1,3 @@
-"""
-sample_vulnerable_app.py
-────────────────────────
-This file is INTENTIONALLY written with security flaws
-for demonstration purposes with the Task 3 scanner.
-DO NOT use any pattern here in real code.
-"""
 import sqlite3
 import os
 import subprocess
