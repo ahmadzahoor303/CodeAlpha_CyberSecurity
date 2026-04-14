@@ -1,24 +1,3 @@
-"""
-╔══════════════════════════════════════════════════════════╗
-║         TASK 3: Secure Coding Review                    ║
-║         CodeAlpha Cybersecurity Internship              ║
-╚══════════════════════════════════════════════════════════╝
-
-What this program does:
-  - Scans Python source files for common security vulnerabilities
-  - Checks for: SQL Injection, hardcoded secrets, use of eval/exec,
-    insecure random, shell injection, weak crypto, open redirects, etc.
-  - Prints a colour-coded report with severity + remediation tips
-  - Optionally saves the report to a text file
-
-How to run:
-  python3 task3_secure_coding_review.py <file_or_folder>
-
-Example:
-  python3 task3_secure_coding_review.py my_app.py
-  python3 task3_secure_coding_review.py ./my_project/
-"""
-
 import re
 import os
 import sys
